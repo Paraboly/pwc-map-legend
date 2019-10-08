@@ -9,53 +9,53 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface MyComponent {
+  interface PwcMapLegend {
     /**
-    * The first name
+    * Colors of the legends
     */
-    'first': string;
+    'colors': string[];
     /**
-    * The last name
+    * Counts of the legends
     */
-    'last': string;
+    'counts': number[];
     /**
-    * The middle name
+    * The name list of legends
     */
-    'middle': string;
+    'names': string[];
   }
 }
 
 declare global {
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLPwcMapLegendElement extends Components.PwcMapLegend, HTMLStencilElement {}
+  var HTMLPwcMapLegendElement: {
+    prototype: HTMLPwcMapLegendElement;
+    new (): HTMLPwcMapLegendElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'pwc-map-legend': HTMLPwcMapLegendElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
+  interface PwcMapLegend {
     /**
-    * The first name
+    * Colors of the legends
     */
-    'first'?: string;
+    'colors'?: string[];
     /**
-    * The last name
+    * Counts of the legends
     */
-    'last'?: string;
+    'counts'?: number[];
     /**
-    * The middle name
+    * The name list of legends
     */
-    'middle'?: string;
+    'names'?: string[];
   }
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
+    'pwc-map-legend': PwcMapLegend;
   }
 }
 
@@ -64,7 +64,9 @@ export { LocalJSX as JSX };
 
 declare module "@stencil/core" {
   export namespace JSX {
-    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+    interface IntrinsicElements {
+      'pwc-map-legend': LocalJSX.PwcMapLegend & JSXBase.HTMLAttributes<HTMLPwcMapLegendElement>;
+    }
   }
 }
 

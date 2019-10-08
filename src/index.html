@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
@@ -9,9 +10,13 @@
   <script nomodule src="/build/pwc-map-legend.js"></script>
 
 </head>
-<body>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+<body
+  style="width: 100vw; height: 100vh; font-family: opensans, Helvetica Neue, Helvetica, Arial, sans-serif;background-color: #2f4050;font-size: 13px;color: #676a6c;">
+
+  <pwc-map-legend names="['AD-IY', 'IY-AD', 'DY-IY']" colors="['red', 'blue', 'orange']" counts="[2,0,1]">
+  </pwc-map-legend>
 
 </body>
+
 </html>
