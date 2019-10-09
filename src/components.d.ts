@@ -19,13 +19,13 @@ export namespace Components {
     */
     'counts': number[];
     /**
+    * Title of the legends
+    */
+    'label': string;
+    /**
     * The name list of legends
     */
     'names': string[];
-    /**
-    * Title of the legends
-    */
-    'title': string;
   }
 }
 
@@ -53,13 +53,13 @@ declare namespace LocalJSX {
     */
     'counts'?: number[];
     /**
+    * Title of the legends
+    */
+    'label'?: string;
+    /**
     * The name list of legends
     */
     'names'?: string[];
-    /**
-    * Title of the legends
-    */
-    'title'?: string;
   }
 
   interface IntrinsicElements {

@@ -1,4 +1,4 @@
-import { Component, Prop, h } from "@stencil/core";
+import { Component, Prop, h, Watch } from "@stencil/core";
 import { generateLegendTemplate } from "../../utils/utils";
 
 @Component({
@@ -10,41 +10,50 @@ export class PWCMapLegendComponent {
   /**
    * Title of the legends
    */
-  @Prop() title: string;
+  @Prop() label: string = "Legend";
   /**
    * The name list of legends
    */
-  @Prop() names: string[];
+  @Prop({ reflect: true }) names: string[] = ["EAST", "WEST", "TEST"];
 
   /**
    * Colors of the legends
    */
-  @Prop() colors: string[];
+  @Prop({ reflect: true }) colors: string[] = ["red", "blue", "green"];
 
   /**
    * Counts of the legends
    */
-  @Prop() counts: number[];
+  @Prop({ reflect: true }) counts: number[] = [2, 1, 0];
 
-  ComponentDidLoad() {
-    console.log(this);
+  componentDidLoad() {
+    console.log(typeof this.names, ":", this.names);
+    // console.log(this.label);
+    // console.log(this.names);
+    // console.log(this.colors);
+    // console.log(this.counts);
+  }
+
+  @Watch("label")
+  watchHandler(newValue: boolean, oldValue: boolean) {
+    console.log("The old value of activated is: ", oldValue);
+    console.log("The new value of activated is: ", newValue);
   }
 
   private getTemplate(): any[] {
-    console.log(this.names);
     const template = generateLegendTemplate(
-      this.names || ["Turkey", "Greece", "Italy"],
-      this.colors || ["red", "blue", "green"],
-      this.counts || [2, 1, 0]
+      this.names,
+      this.colors,
+      this.counts
     );
-    console.log(template);
+
     return template;
   }
 
   render() {
     return (
       <div class="legend-container">
-        {this.title && <h5 class="legend-title">{this.title}</h5>}
+        {this.label && <h5 class="legend-title">{this.label}</h5>}
         {this.getTemplate()}
       </div>
     );

@@ -32,10 +32,14 @@
 
 <body>
 
-  <pwc-map-legend names="['AD-IY', 'IY-AD', 'DY-IY']" colors="['red', 'blue', 'orange']" counts="[2,0,1]"
-    title="ⓘ Legend">
+  <pwc-map-legend label="ⓘ Legend">
   </pwc-map-legend>
-
+  <script>
+    var wc = document.querySelector('pwc-map-legend');
+    wc.names = ["ses", "kes", "test"];
+    wc.colors = ['red', 'blue', 'orange'];
+    wc.counts = [2, 0, 1];
+  </script>
 </body>
 
 </html>
