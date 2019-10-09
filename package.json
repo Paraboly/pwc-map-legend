@@ -1,5 +1,5 @@
 {
-  "name": "@parabol/wc-map-legend",
+  "name": "@paraboly/wc-map-legend",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.js",
