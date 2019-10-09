@@ -1,5 +1,5 @@
 .legend-container {
-  width: fit-content;
+  width: max-content;
   display: flex;
   flex-direction: column;
   background-color: transparent;
