@@ -8,6 +8,10 @@ import { generateLegendTemplate } from "../../utils/utils";
 })
 export class PWCMapLegendComponent {
   /**
+   * Title of the legends
+   */
+  @Prop() title: string;
+  /**
    * The name list of legends
    */
   @Prop() names: string[];
@@ -22,7 +26,7 @@ export class PWCMapLegendComponent {
    */
   @Prop() counts: number[];
 
-  ComponentWillLoad() {
+  ComponentDidLoad() {
     console.log(this);
   }
 
@@ -38,6 +42,11 @@ export class PWCMapLegendComponent {
   }
 
   render() {
-    return <div class="legend-container">{this.getTemplate()}</div>;
+    return (
+      <div class="legend-container">
+        {this.title && <h5 class="legend-title">{this.title}</h5>}
+        {this.getTemplate()}
+      </div>
+    );
   }
 }

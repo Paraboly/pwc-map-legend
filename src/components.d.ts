@@ -22,6 +22,10 @@ export namespace Components {
     * The name list of legends
     */
     'names': string[];
+    /**
+    * Title of the legends
+    */
+    'title': string;
   }
 }
 
@@ -52,6 +56,10 @@ declare namespace LocalJSX {
     * The name list of legends
     */
     'names'?: string[];
+    /**
+    * Title of the legends
+    */
+    'title'?: string;
   }
 
   interface IntrinsicElements {

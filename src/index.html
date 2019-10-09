@@ -11,10 +11,29 @@
 
 </head>
 
-<body
-  style="width: 100vw; height: 100vh; font-family: opensans, Helvetica Neue, Helvetica, Arial, sans-serif;background-color: #2f4050;font-size: 13px;color: #676a6c;">
+<style>
+  body {
+    width: 100vw;
+    height: 100vh;
+    font-family: opensans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    background-color: #eee;
+    color: #676a6c;
+  }
 
-  <pwc-map-legend names="['AD-IY', 'IY-AD', 'DY-IY']" colors="['red', 'blue', 'orange']" counts="[2,0,1]">
+  pwc-map-legend {
+    display: block;
+    position: absolute;
+    top: 200px;
+
+    margin-left: calc(50vw - 40px);
+  }
+</style>
+
+<body>
+
+  <pwc-map-legend names="['AD-IY', 'IY-AD', 'DY-IY']" colors="['red', 'blue', 'orange']" counts="[2,0,1]"
+    title="ⓘ Legend">
   </pwc-map-legend>
 
 </body>
