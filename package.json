@@ -1,6 +1,6 @@
 {
   "name": "@paraboly/wc-map-legend",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Stencil Component Starter",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
