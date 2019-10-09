@@ -1,4 +1,5 @@
 .legend-container {
+  width: fit-content;
   display: flex;
   flex-direction: column;
   background-color: transparent;
@@ -24,6 +25,8 @@
 }
 .legend-container p {
   margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .legend-container p strong {
   padding-left: 10px;
