@@ -39,6 +39,8 @@
 
 # Usage
 
+## HTML Tag Prop Way
+
 ```html
  <pwc-map-legend
       counts='["1512","150","64"]'
@@ -49,6 +51,19 @@
 />
 ```
 
+## Javascript Way
+
+```html 
+<pwc-map-legend />
+```
+
+```js
+var wc = document.querySelector('pwc-map-legend');
+  wc.titleText = "Legend"
+  wc.counts = [215, 610, 5111];
+  wc.colors = ['red', 'blue', 'orange'];
+  wc.names = ["Paraboly", "Google", "Apple"];
+```
 
 ## Authors
 
