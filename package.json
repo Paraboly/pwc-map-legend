@@ -1,7 +1,7 @@
 {
   "name": "@paraboly/pwc-map-legend",
   "version": "0.1.0",
-  "description": "Stencil Component Starter",
+  "description": "Fully customizable map legend view for Web with StencilJS via Paraboly",
   "repository": "https://github.com/Paraboly/pwc-map-legend",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
