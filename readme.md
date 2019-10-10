@@ -15,6 +15,7 @@
 <p align="center">
   <img alt="WebComponent Map Legend" src="assets/example.png" />
   <img alt="WebComponent Map Legend" src="assets/example2.png" />
+  <img alt="WebComponent Map Legend" src="assets/example3.png" />
 </p>
 
 
