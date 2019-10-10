@@ -25,26 +25,29 @@ export class PWCMapLegendComponent {
   /**
    * The name list of legends
    */
-  @Prop() names: string = '["Turkey", "Greece", "Italy"]';
+  @Prop() names: any = '["Turkey", "Greece", "Italy"]';
 
   /**
    * Colors of the legends
    */
-  @Prop() colors: string = '["red", "blue", "green"]';
+  @Prop() colors: any = '["red", "blue", "green"]';
 
   /**
    * Counts of the legends
    */
-  @Prop() counts: string = '["2", "1", "0"]';
+  @Prop() counts: any = '["2", "1", "0"]';
 
   ComponentDidLoad() {
     console.log(this);
   }
 
   private renderTemplate(): any[] {
-    const colors = JSON.parse(this.colors);
-    const names = JSON.parse(this.names);
-    const counts = JSON.parse(this.counts);
+    const colors =
+      typeof this.colors === "string" ? JSON.parse(this.colors) : this.colors;
+    const names =
+      typeof this.names === "string" ? JSON.parse(this.names) : this.names;
+    const counts =
+      typeof this.counts === "string" ? JSON.parse(this.counts) : this.counts;
     const template = generateLegendTemplate(names, colors, counts);
     return template;
   }

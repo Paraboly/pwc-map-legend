@@ -13,11 +13,11 @@ export namespace Components {
     /**
     * Colors of the legends
     */
-    'colors': string;
+    'colors': any;
     /**
     * Counts of the legends
     */
-    'counts': string;
+    'counts': any;
     /**
     * Disable the tooltip
     */
@@ -29,7 +29,7 @@ export namespace Components {
     /**
     * The name list of legends
     */
-    'names': string;
+    'names': any;
     /**
     * Title of the legends
     */
@@ -55,11 +55,11 @@ declare namespace LocalJSX {
     /**
     * Colors of the legends
     */
-    'colors'?: string;
+    'colors'?: any;
     /**
     * Counts of the legends
     */
-    'counts'?: string;
+    'counts'?: any;
     /**
     * Disable the tooltip
     */
@@ -71,7 +71,7 @@ declare namespace LocalJSX {
     /**
     * The name list of legends
     */
-    'names'?: string;
+    'names'?: any;
     /**
     * Title of the legends
     */
