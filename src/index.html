@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+    <script type="module" src="/build/pwc-map-legend.esm.js"></script>
+    <script nomodule src="/build/pwc-map-legend.js"></script>
+  </head>
 
-  <script type="module" src="/build/pwc-map-legend.esm.js"></script>
-  <script nomodule src="/build/pwc-map-legend.js"></script>
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      font-size: 13px;
+      background-color: #eee;
+      font-family: opensans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    }
 
-</head>
+    pwc-map-legend {
+      margin: auto;
+    }
+  </style>
 
-<style>
-  body {
-    width: 100vw;
-    height: 100vh;
-    font-family: opensans, Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    background-color: #eee;
-    color: #676a6c;
-  }
-
-  pwc-map-legend {
-    display: block;
-    position: absolute;
-    top: 200px;
-
-    margin-left: calc(50vw - 40px);
-  }
-</style>
-
-<body>
-
-  <pwc-map-legend names="['AD-IY', 'IY-AD', 'DY-IY']" colors="['red', 'blue', 'orange']" counts="[2,0,1]"
-    title="ⓘ Legend">
-  </pwc-map-legend>
-
-</body>
-
+  <body>
+    <pwc-map-legend
+      counts='["1512","150","64"]'
+      title-text="Custom Legend Title"
+      colors='["#BD0003", "#3469CC", "darkGreen"]'
+      color-array='["hello", "hello2"]'
+      names='["USA", "Ireland","Turkey"]'
+    />
+  </body>
 </html>

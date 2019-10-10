@@ -13,19 +13,27 @@ export namespace Components {
     /**
     * Colors of the legends
     */
-    'colors': string[];
+    'colors': string;
     /**
     * Counts of the legends
     */
-    'counts': number[];
+    'counts': string;
+    /**
+    * Disable the tooltip
+    */
+    'disableTooltip': boolean;
+    /**
+    * Description of the legend tooltip
+    */
+    'legendText': string;
     /**
     * The name list of legends
     */
-    'names': string[];
+    'names': string;
     /**
     * Title of the legends
     */
-    'title': string;
+    'titleText': string;
   }
 }
 
@@ -47,19 +55,27 @@ declare namespace LocalJSX {
     /**
     * Colors of the legends
     */
-    'colors'?: string[];
+    'colors'?: string;
     /**
     * Counts of the legends
     */
-    'counts'?: number[];
+    'counts'?: string;
+    /**
+    * Disable the tooltip
+    */
+    'disableTooltip'?: boolean;
+    /**
+    * Description of the legend tooltip
+    */
+    'legendText'?: string;
     /**
     * The name list of legends
     */
-    'names'?: string[];
+    'names'?: string;
     /**
     * Title of the legends
     */
-    'title'?: string;
+    'titleText'?: string;
   }
 
   interface IntrinsicElements {

@@ -1,6 +1,6 @@
 {
-  "name": "@paraboly/wc-map-legend",
-  "version": "0.0.4",
+  "name": "@paraboly/pwc-map-legend",
+  "version": "0.1.0",
   "description": "Stencil Component Starter",
   "repository": "https://github.com/Paraboly/pwc-map-legend",
   "main": "dist/index.js",
