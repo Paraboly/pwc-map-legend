@@ -1,4 +1,4 @@
-import { Component, Prop, h, Watch } from "@stencil/core";
+import { Component, Prop, h } from "@stencil/core";
 import { generateLegendTemplate } from "../../utils/utils";
 
 @Component({
@@ -10,51 +10,74 @@ export class PWCMapLegendComponent {
   /**
    * Title of the legends
    */
-  @Prop() label: string = "Legend";
+  @Prop() titleText: string = "Legend";
+
+  /**
+   * Description of the legend tooltip
+   */
+  @Prop() legendText: string = "Legend";
+
+  /**
+   * Disable the tooltip
+   */
+  @Prop() disableTooltip: boolean = false;
+
   /**
    * The name list of legends
    */
-  @Prop({ reflect: true }) names: string[] = ["EAST", "WEST", "TEST"];
+  @Prop() names: any = '["Turkey", "Greece", "Italy"]';
 
   /**
    * Colors of the legends
    */
-  @Prop({ reflect: true }) colors: string[] = ["red", "blue", "green"];
+  @Prop() colors: any = '["red", "blue", "green"]';
 
   /**
    * Counts of the legends
    */
-  @Prop({ reflect: true }) counts: number[] = [2, 1, 0];
+  @Prop() counts: any = '["2", "1", "0"]';
 
-  componentDidLoad() {
-    console.log(typeof this.names, ":", this.names);
-    // console.log(this.label);
-    // console.log(this.names);
-    // console.log(this.colors);
-    // console.log(this.counts);
+  ComponentDidLoad() {
+    console.log(this);
   }
 
-  @Watch("label")
-  watchHandler(newValue: boolean, oldValue: boolean) {
-    console.log("The old value of activated is: ", oldValue);
-    console.log("The new value of activated is: ", newValue);
-  }
-
-  private getTemplate(): any[] {
-    const template = generateLegendTemplate(
-      this.names,
-      this.colors,
-      this.counts
-    );
-
+  private renderTemplate(): any[] {
+    const colors =
+      typeof this.colors === "string" ? JSON.parse(this.colors) : this.colors;
+    const names =
+      typeof this.names === "string" ? JSON.parse(this.names) : this.names;
+    const counts =
+      typeof this.counts === "string" ? JSON.parse(this.counts) : this.counts;
+    const template = generateLegendTemplate(names, colors, counts);
     return template;
+  }
+
+  renderTitle() {
+    return (
+      <div class="flex-row legend-title-container">
+        {!this.disableTooltip && (
+          <div class="tooltip">
+            <img
+              alt="icon"
+              class="icon-style "
+              src="../../assets/information.svg"
+            />
+            <div class="top">
+              <h3>{this.legendText}</h3>
+              <i></i>
+            </div>
+          </div>
+        )}
+        <label class="legend-title">{this.titleText}</label>
+      </div>
+    );
   }
 
   render() {
     return (
       <div class="legend-container">
-        {this.label && <h5 class="legend-title">{this.label}</h5>}
-        {this.getTemplate()}
+        {this.renderTitle()}
+        {this.renderTemplate()}
       </div>
     );
   }

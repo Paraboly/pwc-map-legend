@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+    <script type="module" src="/build/pwc-map-legend.esm.js"></script>
+    <script nomodule src="/build/pwc-map-legend.js"></script>
+  </head>
 
-  <script type="module" src="/build/pwc-map-legend.esm.js"></script>
-  <script nomodule src="/build/pwc-map-legend.js"></script>
-
-</head>
-
-<style>
-  body {
-    width: 100vw;
-    height: 100vh;
-    font-family: opensans, Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    background-color: #eee;
-    color: #676a6c;
-  }
-
-  pwc-map-legend {
-    display: block;
-    position: absolute;
-    top: 200px;
-
-    margin-left: calc(50vw - 40px);
-  }
-</style>
-
-<body>
-
-  <pwc-map-legend label="ⓘ Legend">
-  </pwc-map-legend>
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      font-size: 13px;
+      background-color: #fff;
+      font-family: opensans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    }
+    pwc-map-legend {
+      margin: auto;
+    }
+  </style>
+  <body>
+    <!-- Option 1 -->
+    <pwc-map-legend
+      counts='["1512","150","64"]'
+      title-text="Custom Legend Title"
+      names='["USA", "Turkey", "Ireland"]'
+      colors='["#3469CC","#BD0003", "#02abc2"]'
+    />
+  </body>
   <script>
+    // Option 2
     var wc = document.querySelector('pwc-map-legend');
-    wc.names = ["ses", "kes", "test"];
+    wc.titleText = "Legend"
+    wc.names = ["Paraboly", "Google", "Apple"];
     wc.colors = ['red', 'blue', 'orange'];
-    wc.counts = [2, 0, 1];
+    wc.counts = [215, 610, 5111];
   </script>
-</body>
-
 </html>

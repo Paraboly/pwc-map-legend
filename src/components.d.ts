@@ -10,22 +10,30 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface PwcMapLegend {
-    /**
+     /**
     * Colors of the legends
     */
-    'colors': string[];
+    'colors': any;
     /**
     * Counts of the legends
     */
-    'counts': number[];
+    'counts': any;
     /**
-    * Title of the legends
+    * Disable the tooltip
     */
-    'label': string;
+    'disableTooltip': boolean;
+    /**
+    * Description of the legend tooltip
+    */
+    'legendText': string;
     /**
     * The name list of legends
     */
-    'names': string[];
+    'names': any;
+    /**
+    * Title of the legends
+    */
+    'titleText': string;
   }
 }
 
@@ -47,19 +55,27 @@ declare namespace LocalJSX {
     /**
     * Colors of the legends
     */
-    'colors'?: string[];
+    'colors'?: any;
     /**
     * Counts of the legends
     */
-    'counts'?: number[];
+    'counts'?: any;
     /**
-    * Title of the legends
+    * Disable the tooltip
     */
-    'label'?: string;
+    'disableTooltip'?: boolean;
+    /**
+    * Description of the legend tooltip
+    */
+    'legendText'?: string;
     /**
     * The name list of legends
     */
-    'names'?: string[];
+    'names'?: any;
+    /**
+    * Title of the legends
+    */
+    'titleText'?: string;
   }
 
   interface IntrinsicElements {

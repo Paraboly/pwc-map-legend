@@ -5,18 +5,19 @@ export function generateLegendTemplate(
   counts: number[]
 ): any[] {
   const legendsTemplate = names.map((name, index) => {
+    console.log(colors);
     const color = colors[index];
     return (
       <p style={{ color }}>
-        <svg xmlns="http://www.w3.org/2000/svg">
+        <svg>
           <line
             x1="15"
             y1="15"
-            x2="70"
+            x2="50"
             y2="15"
-            stroke-width="10"
-            stroke-linecap="round"
             stroke={color}
+            stroke-width="7"
+            stroke-linecap="round"
           />
         </svg>
         <strong>
