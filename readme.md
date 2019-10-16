@@ -6,8 +6,8 @@
 [![Fully customizable map legend view for Web with StencilJS via Paraboly](https://img.shields.io/badge/-Fully%20customizable%20map%20legend%20view%20for%20Web%20with%20StencilJS%20via%20Paraboly-lightgrey?style=for-the-badge)](https://github.com/Paraboly/pwc-map-legend)
 
 
-[![npm version](https://img.shields.io/npm/v/@paraboly/pwc-map-legend.svg?style=for-the-badge)](https://www.npmjs.com/package/@paraboly/wc-map-legend)
-[![npm](https://img.shields.io/npm/dt/@paraboly/pwc-map-legend.svg?style=for-the-badge)](https://www.npmjs.com/package/@paraboly/wc-map-legend)
+[![npm version](https://img.shields.io/npm/v/@paraboly/pwc-map-legend.svg?style=for-the-badge)](https://www.npmjs.com/package/@paraboly/pwc-map-legend)
+[![npm](https://img.shields.io/npm/dt/@paraboly/pwc-map-legend.svg?style=for-the-badge)](https://www.npmjs.com/package/@paraboly/pwc-map-legend)
 ![Platform - Platform Free Web](https://img.shields.io/badge/-Web%20%7C%20Platform%20Free-blue?style=for-the-badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
