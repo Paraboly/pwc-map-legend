@@ -60,7 +60,7 @@ export class PWCMapLegendComponent {
             <img
               alt="icon"
               class="icon-style "
-              src="../../assets/information.svg"
+              src="https://image.flaticon.com/icons/svg/157/157933.svg"
             />
             <div class="top">
               <h3>{this.legendText}</h3>
