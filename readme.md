@@ -24,13 +24,9 @@
 ### Script tag
 
 - [Publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages)
-- Put a script tag similar to this `<script	type="module" src="https://unpkg.com/@paraboly/pwc-map-legend@0.0.4/dist/pwc-map-legend/pwc-map-legend.esm.js"></script>` in the head of your index.html
+- Put a script tag similar to this `<script	type="module" src="https://unpkg.com/@paraboly/pwc-map-legend@latest/dist/pwc-map-legend/pwc-map-legend.esm.js"></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
 
-### Node Modules
-- Run `npm install @paraboly/pwc-map-legend --save`
-- Put a script tag similar to this `<script src='node_modules/pwc-map-legend/dist/pwc-map-legend.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
 
 ### In a stencil-starter app
 - Run `npm install @paraboly/pwc-map-legend --save`

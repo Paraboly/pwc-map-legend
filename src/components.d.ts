@@ -10,7 +10,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface PwcMapLegend {
-     /**
+    /**
     * Colors of the legends
     */
     'colors': any;
