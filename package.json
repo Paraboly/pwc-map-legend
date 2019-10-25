@@ -25,5 +25,8 @@
   "devDependencies": {
     "@stencil/core": "^1.3.3"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@paraboly/pwc-tooltip": "0.0.2"
+  }
 }

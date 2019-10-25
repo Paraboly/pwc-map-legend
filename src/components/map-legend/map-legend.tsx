@@ -37,11 +37,10 @@ export class PWCMapLegendComponent {
    */
   @Prop() counts: any = '["2", "1", "0"]';
 
+  /**
+   * Customize the svg style completely
+   */
   @Prop() svgStyles: any;
-
-  ComponentDidLoad() {
-    console.log(this);
-  }
 
   private renderTemplate(): any[] {
     const colors =
@@ -59,7 +58,7 @@ export class PWCMapLegendComponent {
     return template;
   }
 
-  renderTitle() {
+  private renderTitle() {
     return (
       <div class="flex-row legend-title-container">
         {!this.disableTooltip && (
