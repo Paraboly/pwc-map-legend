@@ -27,19 +27,25 @@
   </style>
   <body>
     <!-- Option 1 -->
-    <pwc-map-legend
+    <!-- <pwc-map-legend
       counts='["1512","150","64"]'
       title-text="Custom Legend Title"
       names='["USA", "Turkey", "Ireland"]'
       colors='["#3469CC","#BD0003", "#02abc2"]'
-    />
+    /> -->
+    <pwc-map-legend />
   </body>
   <script>
     // Option 2
-    var wc = document.querySelector('pwc-map-legend');
-    wc.titleText = "Legend"
-    wc.names = ["Paraboly", "Google", "Apple"];
-    wc.colors = ['red', 'blue', 'orange'];
-    wc.counts = [215, 610, 5111];
+    var pwcMapLegend = document.querySelector("pwc-map-legend");
+    pwcMapLegend.titleText = "Legend";
+    pwcMapLegend.names = ["Paraboly", "Google", "Apple"];
+    pwcMapLegend.colors = ["red", "blue", "orange"];
+    pwcMapLegend.counts = [215, 610, 5111];
+    pwcMapLegend.svgStyles = [
+      { "stroke-dasharray": "4 1 2 3", "stroke-opacity": 0.9 },
+      { "stroke-dasharray": "4 1", "stroke-opacity": 0.5 },
+      { "stroke-dasharray": 4, "stroke-opacity": 0.9 }
+    ];
   </script>
 </html>

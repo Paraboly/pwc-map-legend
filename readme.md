@@ -2,15 +2,12 @@
 
 <img alt="WebComponent Map Legend" src="assets/logo.png" width="1050"/>
 
-
 [![Fully customizable map legend view for Web with StencilJS via Paraboly](https://img.shields.io/badge/-Fully%20customizable%20map%20legend%20view%20for%20Web%20with%20StencilJS%20via%20Paraboly-lightgrey?style=for-the-badge)](https://github.com/Paraboly/pwc-map-legend)
-
 
 [![npm version](https://img.shields.io/npm/v/@paraboly/pwc-map-legend.svg?style=for-the-badge)](https://www.npmjs.com/package/@paraboly/pwc-map-legend)
 [![npm](https://img.shields.io/npm/dt/@paraboly/pwc-map-legend.svg?style=for-the-badge)](https://www.npmjs.com/package/@paraboly/pwc-map-legend)
 ![Platform - Platform Free Web](https://img.shields.io/badge/-Web%20%7C%20Platform%20Free-blue?style=for-the-badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-
 
 <p align="center">
   <img alt="WebComponent Map Legend" src="assets/example.png" />
@@ -18,48 +15,51 @@
   <img alt="WebComponent Map Legend" src="assets/example3.png" />
 </p>
 
-
 ## Installation
 
 ### Script tag
 
 - [Publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages)
-- Put a script tag similar to this `<script	type="module" src="https://unpkg.com/@paraboly/pwc-map-legend@latest/dist/pwc-map-legend/pwc-map-legend.esm.js"></script>` in the head of your index.html
+- Put a script tag similar to this `<script type="module" src="https://unpkg.com/@paraboly/pwc-map-legend@latest/dist/pwc-map-legend/pwc-map-legend.esm.js"></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
 
-
 ### In a stencil-starter app
+
 - Run `npm install @paraboly/pwc-map-legend --save`
 - Add an import to the npm packages `import @paraboly/pwc-map-legend;`
 - Then you can use the element anywhere in your template, JSX, html etc
-
 
 # Usage
 
 ## HTML Tag Prop Way
 
 ```html
- <pwc-map-legend
-      counts='["1512","150","64"]'
-      title-text="Custom Legend Title"
-      color-array='["hello", "hello2"]'
-      names='["USA", "Ireland","Turkey"]'
-      colors='["#BD0003", "#3469CC", "darkGreen"]'
+<pwc-map-legend
+  counts='["1512","150","64"]'
+  title-text="Custom Legend Title"
+  color-array='["hello", "hello2"]'
+  names='["USA", "Ireland","Turkey"]'
+  colors='["#BD0003", "#3469CC", "darkGreen"]'
 />
 ```
 
 ## Javascript Way
 
-```html 
+```html
 <pwc-map-legend />
 ```
 
 ```js
-var wc = document.querySelector('pwc-map-legend');
-  wc.titleText = "Legend"
-  wc.counts = [215, 610, 5111];
-  wc.colors = ['red', 'blue', 'orange'];
-  wc.names = ["Paraboly", "Google", "Apple"];
+var pwcMapLegend = document.querySelector("pwc-map-legend");
+pwcMapLegend.titleText = "Legend";
+pwcMapLegend.counts = [215, 610, 5111];
+pwcMapLegend.colors = ["red", "blue", "orange"];
+pwcMapLegend.names = ["Paraboly", "Google", "Apple"];
+pwcMapLegend.svgStyles = [
+  { "stroke-dasharray": "4 1 2 3", "stroke-opacity": 0.9 },
+  { "stroke-dasharray": "4 1", "stroke-opacity": 0.5 },
+  { "stroke-dasharray": 4, "stroke-opacity": 0.9 }
+];
 ```
 
 ## Authors

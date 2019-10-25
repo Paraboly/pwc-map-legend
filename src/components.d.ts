@@ -30,6 +30,7 @@ export namespace Components {
     * The name list of legends
     */
     'names': any;
+    'svgStyles': any;
     /**
     * Title of the legends
     */
@@ -72,6 +73,7 @@ declare namespace LocalJSX {
     * The name list of legends
     */
     'names'?: any;
+    'svgStyles'?: any;
     /**
     * Title of the legends
     */

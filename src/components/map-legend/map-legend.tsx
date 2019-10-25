@@ -37,6 +37,8 @@ export class PWCMapLegendComponent {
    */
   @Prop() counts: any = '["2", "1", "0"]';
 
+  @Prop() svgStyles: any;
+
   ComponentDidLoad() {
     console.log(this);
   }
@@ -48,7 +50,12 @@ export class PWCMapLegendComponent {
       typeof this.names === "string" ? JSON.parse(this.names) : this.names;
     const counts =
       typeof this.counts === "string" ? JSON.parse(this.counts) : this.counts;
-    const template = generateLegendTemplate(names, colors, counts);
+    const template = generateLegendTemplate(
+      names,
+      colors,
+      counts,
+      this.svgStyles
+    );
     return template;
   }
 
