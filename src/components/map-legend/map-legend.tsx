@@ -1,5 +1,6 @@
 import { Component, Prop, h } from "@stencil/core";
 import { generateLegendTemplate } from "../../utils/utils";
+import "@paraboly/pwc-tooltip";
 
 @Component({
   tag: "pwc-map-legend",
@@ -37,11 +38,12 @@ export class PWCMapLegendComponent {
    */
   @Prop() counts: any = '["2", "1", "0"]';
 
+  /**
+   * Customize the svg style completely
+   */
   @Prop() svgStyles: any;
 
-  ComponentDidLoad() {
-    console.log(this);
-  }
+  @Prop() tooltipProps: any;
 
   private renderTemplate(): any[] {
     const colors =
@@ -59,21 +61,24 @@ export class PWCMapLegendComponent {
     return template;
   }
 
-  renderTitle() {
+  private renderTitle() {
     return (
       <div class="flex-row legend-title-container">
         {!this.disableTooltip && (
-          <div class="tooltip">
-            <img
-              alt="icon"
-              class="icon-style "
-              src="https://image.flaticon.com/icons/svg/157/157933.svg"
-            />
-            <div class="top">
-              <h3>{this.legendText}</h3>
-              <i></i>
-            </div>
-          </div>
+          <pwc-tooltip tooltip-alignment="top" tooltip-text={this.legendText}>
+            <slot></slot>
+          </pwc-tooltip>
+          // <div class="tooltip">
+          //   <img
+          //     alt="icon"
+          //     class="icon-style "
+          //     src="https://image.flaticon.com/icons/svg/157/157933.svg"
+          //   />
+          //   <div class="top">
+          //     <h3>{this.legendText}</h3>
+          //     <i></i>
+          //   </div>
+          // </div>
         )}
         <label class="legend-title">{this.titleText}</label>
       </div>

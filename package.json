@@ -1,6 +1,6 @@
 {
   "name": "@paraboly/pwc-map-legend",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Fully customizable map legend view for Web with StencilJS via Paraboly",
   "repository": "https://github.com/Paraboly/pwc-map-legend",
   "main": "dist/index.js",
@@ -25,5 +25,8 @@
   "devDependencies": {
     "@stencil/core": "^1.3.3"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@paraboly/pwc-tooltip": "0.0.3"
+  }
 }

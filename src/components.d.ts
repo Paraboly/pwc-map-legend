@@ -30,11 +30,15 @@ export namespace Components {
     * The name list of legends
     */
     'names': any;
+    /**
+    * Customize the svg style completely
+    */
     'svgStyles': any;
     /**
     * Title of the legends
     */
     'titleText': string;
+    'tooltipProps': any;
   }
 }
 
@@ -73,11 +77,15 @@ declare namespace LocalJSX {
     * The name list of legends
     */
     'names'?: any;
+    /**
+    * Customize the svg style completely
+    */
     'svgStyles'?: any;
     /**
     * Title of the legends
     */
     'titleText'?: string;
+    'tooltipProps'?: any;
   }
 
   interface IntrinsicElements {
