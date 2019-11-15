@@ -15,6 +15,8 @@
   <img alt="WebComponent Map Legend" src="assets/example3.png" />
 </p>
 
+## [Live JSFiddle Example](https://jsfiddle.net/starikcetin/9vL1w75c/4/)
+
 ## Installation
 
 ### Script tag
