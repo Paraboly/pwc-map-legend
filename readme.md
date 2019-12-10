@@ -67,6 +67,7 @@ pwcMapLegend.svgStyles = [
 ## Authors
 
 SchemeSonic, haldun.yildiz@paraboly.com | haldun313@gmail.com
+
 FreakyCoder, kuray.ogun@paraboly.com | kurayogun@gmail.com
 
 ## License
