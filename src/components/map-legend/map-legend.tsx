@@ -1,5 +1,6 @@
 import { Component, Prop, h } from "@stencil/core";
 import { generateLegendTemplate } from "../../utils/utils";
+import { generateIcon } from "../../generate/icon";
 import "@paraboly/pwc-tooltip";
 
 @Component({
@@ -45,6 +46,8 @@ export class PWCMapLegendComponent {
 
   @Prop() tooltipProps: any;
 
+  @Prop() icon: any;
+
   private renderTemplate(): any[] {
     const colors =
       typeof this.colors === "string" ? JSON.parse(this.colors) : this.colors;
@@ -53,6 +56,7 @@ export class PWCMapLegendComponent {
     const counts =
       typeof this.counts === "string" ? JSON.parse(this.counts) : this.counts;
     const template = generateLegendTemplate(
+      // ??
       names,
       colors,
       counts,

@@ -10,7 +10,10 @@
 
     <script type="module" src="/build/pwc-map-legend.esm.js"></script>
     <script nomodule src="/build/pwc-map-legend.js"></script>
-    <script type="module" src="https://unpkg.com/@paraboly/pwc-tooltip@latest/dist/pwc-tooltip/pwc-tooltip.esm.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/@paraboly/pwc-tooltip@latest/dist/pwc-tooltip/pwc-tooltip.esm.js"
+    ></script>
   </head>
 
   <style>
@@ -43,10 +46,26 @@
     pwcMapLegend.names = ["Paraboly", "Google", "Apple"];
     pwcMapLegend.colors = ["red", "blue", "orange"];
     pwcMapLegend.counts = [215, 610, 5111];
+    /*
     pwcMapLegend.svgStyles = [
       { "stroke-dasharray": "4 1 2 3", "stroke-opacity": 0.9 },
       { "stroke-dasharray": "4 1", "stroke-opacity": 0.5 },
       { "stroke-dasharray": 4, "stroke-opacity": 0.9 }
+    ];
+    */
+    pwcMapLegent.icon = [
+      {
+        type: "image",
+        properties: { content: url("http://"), width: 10, height: 10 }
+      },
+      {
+        type: "svg",
+        properties: [
+          { "stroke-dasharray": "4 1 2 3", "stroke-opacity": 0.9 },
+          { "stroke-dasharray": "4 1", "stroke-opacity": 0.5 },
+          { "stroke-dasharray": 4, "stroke-opacity": 0.9 }
+        ]
+      }
     ];
   </script>
 </html>
