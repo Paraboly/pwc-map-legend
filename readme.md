@@ -53,14 +53,40 @@
 
 ```js
 var pwcMapLegend = document.querySelector("pwc-map-legend");
-pwcMapLegend.titleText = "Legend";
-pwcMapLegend.counts = [215, 610, 5111];
-pwcMapLegend.colors = ["red", "blue", "orange"];
+pwcMapLegend.titleText = "Custom Legend Title";
 pwcMapLegend.names = ["Paraboly", "Google", "Apple"];
-pwcMapLegend.svgStyles = [
-  { "stroke-dasharray": "4 1 2 3", "stroke-opacity": 0.9 },
-  { "stroke-dasharray": "4 1", "stroke-opacity": 0.5 },
-  { "stroke-dasharray": 4, "stroke-opacity": 0.9 }
+pwcMapLegend.colors = ["red", "blue", "orange"];
+pwcMapLegend.counts = [215, 610, 5111];
+pwcMapLegend.icons = [
+  {
+    type: "image",
+    properties: {
+      src:
+        "https://cdn.clipart.email/6983b4c1473d9fcbfff83523e452b826_tick-free-vector-download-42-free-vector-for-commercial-use-_576-600.jpeg"
+    }
+  },
+  {
+    type: "svg",
+    properties: {
+      "stroke-dasharray": "4 1 2 3",
+      "stroke-opacity": 0.9,
+      "stroke-dasharray": "4 1",
+      "stroke-opacity": 0.5,
+      "stroke-dasharray": 4,
+      "stroke-opacity": 0.9
+    }
+  },
+  {
+    type: "svg",
+    properties: {
+      "stroke-dasharray": "4 1 2 3",
+      "stroke-opacity": 0.9,
+      "stroke-dasharray": "4 1",
+      "stroke-opacity": 0.5,
+      "stroke-dasharray": 4,
+      "stroke-opacity": 0.9
+    }
+  }
 ];
 ```
 
