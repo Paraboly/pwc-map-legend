@@ -22,6 +22,7 @@ export namespace Components {
     * Disable the tooltip
     */
     'disableTooltip': boolean;
+    'icons': any;
     /**
     * Description of the legend tooltip
     */
@@ -31,13 +32,12 @@ export namespace Components {
     */
     'names': any;
     /**
-    * Customize the svg style completely
-    */
-    'svgStyles': any;
-    /**
     * Title of the legends
     */
     'titleText': string;
+    /**
+    * Customize the svg style completely
+    */
     'tooltipProps': any;
   }
 }
@@ -69,6 +69,7 @@ declare namespace LocalJSX {
     * Disable the tooltip
     */
     'disableTooltip'?: boolean;
+    'icons'?: any;
     /**
     * Description of the legend tooltip
     */
@@ -78,13 +79,12 @@ declare namespace LocalJSX {
     */
     'names'?: any;
     /**
-    * Customize the svg style completely
-    */
-    'svgStyles'?: any;
-    /**
     * Title of the legends
     */
     'titleText'?: string;
+    /**
+    * Customize the svg style completely
+    */
     'tooltipProps'?: any;
   }
 

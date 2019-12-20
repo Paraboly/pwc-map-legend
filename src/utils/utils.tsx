@@ -3,34 +3,58 @@ export function generateLegendTemplate(
   names: string[],
   colors: string[],
   counts: number[],
-  svgStyles
+  icons: string[]
 ): any[] {
   const legendsTemplate = names.map((name, index) => {
-    console.log(colors);
     const color = colors[index];
-    const svgStyle = svgStyles[index];
-    return (
-      <p style={{ color }}>
-        <svg>
-          <line
-            style={svgStyle} // ! This line is important & it's order also is important! DO NOT TOUGH IT!
-            x1="15"
-            y1="15"
-            x2="50"
-            y2="15"
-            elevation={30}
-            stroke={color}
-            stroke-width="3"
-            stroke-opacity="0.5"
-            stroke-linecap="round"
-          />
-        </svg>
-        <strong>
-          {" "}
-          {name} {counts[index] ? `(${counts[index]})` : ""}
-        </strong>
-      </p>
-    );
+    const icon = icons[index];
+
+    console.log(icon);
+    if (icon) {
+      if (icon.type === "svg") {
+        return (
+          <p style={{ color }}>
+            <svg>
+              <line
+                style={icon.properties} // ! This line is important & it's order also is important! DO NOT TOUGH IT!
+                x1="15"
+                y1="15"
+                x2="50"
+                y2="15"
+                elevation={30}
+                stroke={color}
+                stroke-width="3"
+                stroke-opacity="0.5"
+                stroke-linecap="round"
+              />
+            </svg>
+            <strong>
+              {" "}
+              {name} {counts[index] ? `(${counts[index]})` : ""}
+            </strong>
+          </p>
+        );
+      } else if (icon.type === "image") {
+        return (
+          <p style={{ color }}>
+            <img
+              style={{
+                height: "25px",
+                marginLeft: "21px",
+                marginTop: "5px",
+                marginBottom: "-3px",
+                marginRight: "25px"
+              }}
+              src={icon.properties.src}
+            />
+            <strong>
+              {" "}
+              {name} {counts[index] ? `(${counts[index]})` : ""}
+            </strong>
+          </p>
+        );
+      } else return null;
+    } else return null;
   });
 
   return legendsTemplate;

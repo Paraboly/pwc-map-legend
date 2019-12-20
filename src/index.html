@@ -53,18 +53,34 @@
       { "stroke-dasharray": 4, "stroke-opacity": 0.9 }
     ];
     */
-    pwcMapLegent.icon = [
+    pwcMapLegend.icons = [
       {
         type: "image",
-        properties: { content: url("http://"), width: 10, height: 10 }
+        properties: {
+          src: "https://image.flaticon.com/icons/svg/157/157933.svg"
+        }
       },
       {
         type: "svg",
-        properties: [
-          { "stroke-dasharray": "4 1 2 3", "stroke-opacity": 0.9 },
-          { "stroke-dasharray": "4 1", "stroke-opacity": 0.5 },
-          { "stroke-dasharray": 4, "stroke-opacity": 0.9 }
-        ]
+        properties: {
+          "stroke-dasharray": "4 1 2 3",
+          "stroke-opacity": 0.9,
+          "stroke-dasharray": "4 1",
+          "stroke-opacity": 0.5,
+          "stroke-dasharray": 4,
+          "stroke-opacity": 0.9
+        }
+      },
+      {
+        type: "svg",
+        properties: {
+          "stroke-dasharray": "4 1 2 3",
+          "stroke-opacity": 0.9,
+          "stroke-dasharray": "4 1",
+          "stroke-opacity": 0.5,
+          "stroke-dasharray": 4,
+          "stroke-opacity": 0.9
+        }
       }
     ];
   </script>
