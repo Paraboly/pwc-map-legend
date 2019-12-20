@@ -39,11 +39,8 @@ export function generateLegendTemplate(
           <p style={{ color }}>
             <img
               style={{
-                height: "25px",
-                marginLeft: "21px",
-                marginTop: "5px",
-                marginBottom: "-3px",
-                marginRight: "25px"
+                height: "23px",
+                margin: "5px 23px -3px 23px" ;
               }}
               src={icon.properties.src}
             />
