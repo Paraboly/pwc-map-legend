@@ -19,9 +19,13 @@ export namespace Components {
     */
     'counts': any;
     /**
-    * Disable the tooltip
+    * Disable the title
     */
     'disableTitle': boolean;
+    /**
+    * Disable the tooltip
+    */
+    'disableTooltip': boolean;
     /**
     * Description of the legend tooltip
     */
@@ -66,9 +70,13 @@ declare namespace LocalJSX {
     */
     'counts'?: any;
     /**
-    * Disable the tooltip
+    * Disable the title
     */
     'disableTitle'?: boolean;
+    /**
+    * Disable the tooltip
+    */
+    'disableTooltip'?: boolean;
     /**
     * Description of the legend tooltip
     */
