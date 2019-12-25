@@ -21,12 +21,12 @@ export class PWCMapLegendComponent {
   /**
    * Disable the tooltip
    */
-  @Prop() disableTooltip: boolean = true;
+  @Prop() disableTooltip: boolean = false;
 
   /**
    * Disable the title
    */
-  @Prop() disableTitle: boolean = true;
+  @Prop() disableTitle: boolean = false;
 
   /**
    * The name list of legends
@@ -67,9 +67,9 @@ export class PWCMapLegendComponent {
   }
 
   private renderTitle() {
-    return (this.disableTitle && (
+    return (!this.disableTitle && (
       <div class="flex-row legend-title-container">
-        {this.disableTooltip && (
+        {!this.disableTooltip && (
           <pwc-tooltip tooltip-alignment="top" tooltip-text={this.legendText}>
             <slot></slot>
           </pwc-tooltip>
