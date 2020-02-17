@@ -8,7 +8,7 @@ export function generateLegendTemplate(
   const legendsTemplate = names.map((name, index) => {
     console.log(colors);
     const color = colors[index];
-    const svgStyle = svgStyles[index];
+    const svgStyle = svgStyles && svgStyles.length && svgStyles[index];
     return (
       <p style={{ color }}>
         <svg>
