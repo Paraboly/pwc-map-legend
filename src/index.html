@@ -10,7 +10,6 @@
 
     <script type="module" src="/build/pwc-map-legend.esm.js"></script>
     <script nomodule src="/build/pwc-map-legend.js"></script>
-    <script type="module" src="https://unpkg.com/@paraboly/pwc-tooltip@latest/dist/pwc-tooltip/pwc-tooltip.esm.js"></script>
   </head>
 
   <style>
@@ -27,26 +26,89 @@
     }
   </style>
   <body>
-    <!-- Option 1 -->
-    <!-- <pwc-map-legend
-      counts='["1512","150","64"]'
-      title-text="Custom Legend Title"
-      names='["USA", "Turkey", "Ireland"]'
-      colors='["#3469CC","#BD0003", "#02abc2"]'
-    /> -->
-    <pwc-map-legend source-width="100" />
+    <pwc-map-legend />
   </body>
   <script>
-    // Option 2
     var pwcMapLegend = document.querySelector("pwc-map-legend");
     pwcMapLegend.titleText = "Legend";
-    pwcMapLegend.names = ["Paraboly", "Google", "Apple"];
-    pwcMapLegend.colors = ["red", "blue", "orange"];
-    pwcMapLegend.counts = [215, 610, 5111];
-    pwcMapLegend.svgStyles = [
-      { "stroke-dasharray": "4 1 2 3", "stroke-opacity": 0.9 },
-      { "stroke-dasharray": "4 1", "stroke-opacity": 0.5 },
-      { "stroke-dasharray": 4, "stroke-opacity": 0.9 }
+    pwcMapLegend.entries = [
+      {
+        name: "overlay text sample",
+        color: "#222123",
+        count: 42,
+        svgStyle: { "stroke-opacity": 0.8, "stroke-width": 15 },
+        overlayText: "foo",
+        overlayTextColor: "white",
+        overlayTextSvgStyles: {},
+        roadLines: []
+      },
+      {
+        name: "single lane",
+        color: "#222123",
+        count: 10,
+        svgStyle: { "stroke-opacity": 0.8, "stroke-width": 5 },
+        roadLines: []
+      },
+      {
+        name: "divided",
+        color: "#222123",
+        count: 9,
+        svgStyle: { "stroke-opacity": 0.8, "stroke-width": 10 },
+        roadLines: [
+          {
+            color: "white",
+            svgStyle: {}
+          }
+        ]
+      },
+      {
+        name: "dual lane",
+        color: "#222123",
+        count: 9,
+        svgStyle: { "stroke-opacity": 0.8, "stroke-width": 10 },
+        roadLines: [
+          {
+            color: "white",
+            svgStyle: { "stroke-dasharray": 6 }
+          }
+        ]
+      },
+      {
+        name: "triple lane",
+        color: "#222123",
+        count: 8,
+        svgStyle: { "stroke-opacity": 0.8, "stroke-width": 15 },
+        roadLines: [
+          {
+            color: "white",
+            svgStyle: { "stroke-dasharray": 6 }
+          },
+          {
+            color: "white",
+            svgStyle: { "stroke-dasharray": 6 }
+          }
+        ]
+      },
+      {
+        name: "quad lane",
+        color: "#222123",
+        count: 7,
+        svgStyle: { "stroke-opacity": 0.8, "stroke-width": 20 },
+        roadLines: [
+          {
+            color: "white",
+            svgStyle: { "stroke-dasharray": 6 }
+          },
+          {
+            color: "white",
+            svgStyle: { "stroke-dasharray": 6 }
+          },
+          {
+            color: "white",
+            svgStyle: { "stroke-dasharray": 6 }
+          }
+        ]
+      }
     ];
   </script>
 </html>

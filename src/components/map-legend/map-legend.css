@@ -28,14 +28,21 @@
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
+  margin-top: 5px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 .legend-container p strong {
   font-weight: 500;
+  height: fit-content;
+  margin-left: 10px;
 }
 
 .legend-container svg {
-  height: 20px;
-  max-width: 70px;
+  /* height: 20px;
+  max-width: 70px; */
+  overflow: visible;
 }
 
 .icon-style {
