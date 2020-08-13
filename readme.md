@@ -16,7 +16,7 @@
   <img alt="Example with Road Lanes and Overlay Text" src="assets/example-lanes-overlay-text.png" />
 </p>
 
-## [Live JSFiddle Example](https://jsfiddle.net/starikcetin/9vL1w75c/4/)
+## [Live JSFiddle Example](https://jsfiddle.net/starikcetin/y7j28rvs/18/)
 
 ## Installation
 
