@@ -1,53 +1,51 @@
 import { h } from "@stencil/core";
 import { ILegendEntry, IRoadLine } from "../components/map-legend/ILegendEntry";
 
-export function generateLegendTemplate(
-  entries: ILegendEntry[]
-): any[] {
+export function generateLegendTemplate(entries: ILegendEntry[]): HTMLParagraphElement[] {
   const defaultStrokeWidth = 3;
   const maxStrokeWidth = findMaxStrokeWidth(entries, defaultStrokeWidth);
 
   const legendsTemplate = entries.map((entry) => {
-    const {name, color, count, svgStyle, overlayText, overlayTextColor, overlayTextSvgStyle, roadLines} = entry;
+    const { name, color, count, svgStyle, overlayText, overlayTextColor, overlayTextSvgStyle, roadLines } = entry;
 
     const svgHeight = 20;
     const svgWidth = 50;
 
     const lineStrokeWidth = (svgStyle && svgStyle["stroke-width"]) || defaultStrokeWidth;
 
-    const lineStartX = maxStrokeWidth/2;
-    const lineEndX = svgWidth - maxStrokeWidth/2;
-    const lineY = svgHeight/2;
+    const lineStartX = maxStrokeWidth / 2;
+    const lineEndX = svgWidth - maxStrokeWidth / 2;
+    const lineY = svgHeight / 2;
 
     return (
       <p style={{ color }}>
         <svg height={svgHeight} width={svgWidth} viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
-            <line
-              style={svgStyle} // ! This line is important & it's order also is important! DO NOT TOUCH IT!
-              x1={lineStartX}
-              y1={lineY}
-              x2={lineEndX}
-              y2={lineY}
-              elevation={30}
-              stroke={color}
-              stroke-width={lineStrokeWidth}
-              stroke-opacity="0.5"
-              stroke-linecap="round"
-            />
+          <line
+            style={svgStyle} // ! This line is important & it's order also is important! DO NOT TOUCH IT!
+            x1={lineStartX}
+            y1={lineY}
+            x2={lineEndX}
+            y2={lineY}
+            elevation={30}
+            stroke={color}
+            stroke-width={lineStrokeWidth}
+            stroke-opacity="0.5"
+            stroke-linecap="round"
+          />
 
-            {...generateRoadLines(roadLines, lineStartX, lineEndX, lineY, lineStrokeWidth)}
+          {...generateRoadLines(roadLines, lineStartX, lineEndX, lineY, lineStrokeWidth)}
 
-            <text 
-              style={overlayTextSvgStyle}
-              fill={overlayTextColor}
-              alignment-baseline="central"
-              text-anchor="middle"
-              dominant-baseline="central"
-              x="50%" 
-              y="50%"
-            >
-              {overlayText}
-            </text>
+          <text
+            style={overlayTextSvgStyle}
+            fill={overlayTextColor}
+            alignment-baseline="central"
+            text-anchor="middle"
+            dominant-baseline="central"
+            x="50%"
+            y="50%"
+          >
+            {overlayText}
+          </text>
         </svg>
         <strong>
           {`${name || ''} ${count ? `(${count})` : ""}`}
@@ -59,8 +57,8 @@ export function generateLegendTemplate(
   return legendsTemplate;
 }
 
-function generateRoadLines(roadLines: IRoadLine[], xStart: number, xEnd: number, yBase: number, totalHeight: number) {
-  if(!roadLines || roadLines.length < 1) {
+function generateRoadLines(roadLines: IRoadLine[], xStart: number, xEnd: number, yBase: number, totalHeight: number): SVGLineElement[] {
+  if (!roadLines || roadLines.length < 1) {
     return [];
   }
 
@@ -87,12 +85,8 @@ function generateRoadLines(roadLines: IRoadLine[], xStart: number, xEnd: number,
   });
 }
 
-// function getValueSafe(arr, index) {
-//   return arr && arr.length && arr.length > index && arr[index];
-// }
-
-function findMaxStrokeWidth(entries: ILegendEntry[], defaultStrokeWidth: number) {
-  if(!entries || entries.length < 1) {
+function findMaxStrokeWidth(entries: ILegendEntry[], defaultStrokeWidth: number): number {
+  if (!entries || entries.length < 1) {
     return defaultStrokeWidth;
   }
 

@@ -2,6 +2,7 @@ import { Component, Prop, h, Watch } from "@stencil/core";
 import { generateLegendTemplate } from "../../utils/utils";
 import "@paraboly/pwc-tooltip";
 import { ILegendEntry } from './ILegendEntry';
+import { resolveJson } from '../../utils/resolveJson';
 
 @Component({
   tag: "pwc-map-legend",
@@ -33,13 +34,10 @@ export class PWCMapLegendComponent {
 
   private resolvedEntries: ILegendEntry[];
   @Prop() entries: ILegendEntry[] | string;
-  @Watch('entries')
-  watchHandler(newValue) {
-    this.resolvedEntries = typeof newValue === "string" ? JSON.parse(newValue) : newValue;
-  }
 
-  componentWillLoad() {
-    this.resolvedEntries = typeof this.entries === "string" ? JSON.parse(this.entries) : this.entries;
+  @Watch('entries')
+  entriesWatchHandler(newValue: string | ILegendEntry[]) {
+    this.resolvedEntries = resolveJson(newValue);
   }
 
   private renderTemplate(): any[] {
@@ -60,6 +58,10 @@ export class PWCMapLegendComponent {
       </div >
     )
     );
+  }
+
+  componentWillLoad() {
+    this.resolvedEntries = resolveJson(this.entries);
   }
 
   render() {
