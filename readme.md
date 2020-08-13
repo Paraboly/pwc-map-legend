@@ -97,6 +97,10 @@ pwcMapLegend.entries = [
 ];
 ```
 
+## Caveats
+
+* `stroke-width` of `svgStyle` overrides has to be of type `number` only. This is enforced in TypeScript interfaces, but there is no type enforcement when used from JavaScript code or from plain HTML.
+
 ## Authors
 
 * SchemeSonic, haldun.yildiz@paraboly.com | haldun313@gmail.com
