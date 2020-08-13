@@ -13,7 +13,7 @@ export function generateLegendTemplate(
     const svgHeight = 20;
     const svgWidth = 50;
 
-    const lineStrokeWidth = svgStyle["stroke-width"] || defaultStrokeWidth;
+    const lineStrokeWidth = (svgStyle && svgStyle["stroke-width"]) || defaultStrokeWidth;
 
     const lineStartX = maxStrokeWidth/2;
     const lineEndX = svgWidth - maxStrokeWidth/2;
@@ -50,7 +50,7 @@ export function generateLegendTemplate(
             </text>
         </svg>
         <strong>
-          {`${name} ${count ? `(${count})` : ""}`}
+          {`${name || ''} ${count ? `(${count})` : ""}`}
         </strong>
       </p>
     );
@@ -60,6 +60,10 @@ export function generateLegendTemplate(
 }
 
 function generateRoadLines(roadLines: IRoadLine[], xStart: number, xEnd: number, yBase: number, totalHeight: number) {
+  if(!roadLines || roadLines.length < 1) {
+    return [];
+  }
+
   const lineCount = roadLines.length;
   const laneCount = lineCount + 1;
   const laneHeight = laneCount === 0 ? totalHeight : totalHeight / laneCount;
@@ -92,5 +96,5 @@ function findMaxStrokeWidth(entries: ILegendEntry[], defaultStrokeWidth: number)
     return defaultStrokeWidth;
   }
 
-  return Math.max(...entries.map(entry => entry.svgStyle["stroke-width"] || defaultStrokeWidth));
+  return Math.max(...entries.map(entry => (entry.svgStyle && entry.svgStyle["stroke-width"]) || defaultStrokeWidth));
 }
