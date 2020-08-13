@@ -13,6 +13,7 @@
   <img alt="WebComponent Map Legend" src="assets/example.png" />
   <img alt="WebComponent Map Legend" src="assets/example2.png" />
   <img alt="WebComponent Map Legend" src="assets/example3.png" />
+  <img alt="Example with Road Lanes and Overlay Text" src="assets/example-lanes-overlay-text.png" />
 </p>
 
 ## [Live JSFiddle Example](https://jsfiddle.net/starikcetin/9vL1w75c/4/)
@@ -37,39 +38,73 @@
 
 ```html
 <pwc-map-legend
-  counts='["1512","150","64"]'
   title-text="Custom Legend Title"
-  color-array='["hello", "hello2"]'
-  names='["USA", "Ireland","Turkey"]'
-  colors='["#BD0003", "#3469CC", "darkGreen"]'
-/>
+  entries='[
+    {
+      "name": "Foo",
+      "count": 1512,
+      "color": "red"
+    },
+    {
+      "name": "Road",
+      "count": 8,
+      "color": "#222123",
+      "svgStyle": { "stroke-opacity": 0.8, "stroke-width": 15 },
+      "roadLines": [
+        {
+          "color": "white",
+          "svgStyle": { "stroke-dasharray": 6 }
+        },
+        {
+          "color": "white"
+        }
+      ]
+    }
+  ]'
+></pwc-map-legend>
 ```
 
 ## Javascript Way
 
 ```html
-<pwc-map-legend />
+<pwc-map-legend></pwc-map-legend>
 ```
 
 ```js
 var pwcMapLegend = document.querySelector("pwc-map-legend");
 pwcMapLegend.titleText = "Legend";
-pwcMapLegend.counts = [215, 610, 5111];
-pwcMapLegend.colors = ["red", "blue", "orange"];
-pwcMapLegend.names = ["Paraboly", "Google", "Apple"];
-pwcMapLegend.svgStyles = [
-  { "stroke-dasharray": "4 1 2 3", "stroke-opacity": 0.9 },
-  { "stroke-dasharray": "4 1", "stroke-opacity": 0.5 },
-  { "stroke-dasharray": 4, "stroke-opacity": 0.9 }
+pwcMapLegend.entries = [
+  {
+    name: "Foo",
+    count: 1512,
+    color: "red"
+  },
+  {
+    name: "Triple Lane Road",
+    count: 8,
+    color: "#222123",
+    svgStyle: { "stroke-opacity": 0.8, "stroke-width": 15 },
+    roadLines: [
+      {
+        color: "white",
+        svgStyle: { "stroke-dasharray": 6 }
+      },
+      {
+        color: "white"
+      }
+    ]
+  }
 ];
 ```
 
 ## Authors
 
-SchemeSonic, haldun.yildiz@paraboly.com | haldun313@gmail.com
+* SchemeSonic, haldun.yildiz@paraboly.com | haldun313@gmail.com
 
-FreakyCoder, kuray.ogun@paraboly.com | kurayogun@gmail.com
+* FreakyCoder, kuray.ogun@paraboly.com | kurayogun@gmail.com
+
+* starikcetin, tarik.cetin@paraboly.com | cetinsamedtarik@gmail.com
 
 ## License
 
-WebComponent PWC Map Legend is available under the MIT license. See the LICENSE file for more info.
+WebComponent PWC Map Legend is available under the MIT license. Refer to the [LICENSE](/LICENSE) file for more information.

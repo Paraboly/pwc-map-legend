@@ -26,31 +26,31 @@
     }
   </style>
   <body>
-    <pwc-map-legend />
+    <pwc-map-legend></pwc-map-legend>
   </body>
   <script>
     var pwcMapLegend = document.querySelector("pwc-map-legend");
     pwcMapLegend.titleText = "Legend";
     pwcMapLegend.entries = [
       {
-        name: "overlay text sample",
+        name: "Hola!",
         color: "#222123",
-        count: 42,
-        svgStyle: { "stroke-opacity": 0.8, "stroke-width": 15 },
-        overlayText: "foo",
+        count: 47,
+        svgStyle: { "stroke-opacity": 0.8, "stroke-width": 20 },
+        overlayText: "Hello!",
         overlayTextColor: "white",
         overlayTextSvgStyles: {},
         roadLines: []
       },
       {
-        name: "single lane",
+        name: "Single Lane Road",
         color: "#222123",
         count: 10,
         svgStyle: { "stroke-opacity": 0.8, "stroke-width": 5 },
         roadLines: []
       },
       {
-        name: "divided",
+        name: "Divided Road",
         color: "#222123",
         count: 9,
         svgStyle: { "stroke-opacity": 0.8, "stroke-width": 10 },
@@ -62,9 +62,8 @@
         ]
       },
       {
-        name: "dual lane",
+        name: "Dual Lane Road",
         color: "#222123",
-        count: 9,
         svgStyle: { "stroke-opacity": 0.8, "stroke-width": 10 },
         roadLines: [
           {
@@ -72,106 +71,7 @@
             svgStyle: { "stroke-dasharray": 6 }
           }
         ]
-      },
-      {
-        name: "triple lane",
-        color: "#222123",
-        count: 8,
-        svgStyle: { "stroke-opacity": 0.8, "stroke-width": 15 },
-        roadLines: [
-          {
-            color: "white",
-            svgStyle: { "stroke-dasharray": 6 }
-          },
-          {
-            color: "white",
-            svgStyle: { "stroke-dasharray": 6 }
-          }
-        ]
-      },
-      {
-        name: "quad lane",
-        color: "#222123",
-        count: 7,
-        svgStyle: { "stroke-opacity": 0.8, "stroke-width": 20 },
-        roadLines: [
-          {
-            color: "white",
-            svgStyle: { "stroke-dasharray": 6 }
-          },
-          {
-            color: "white",
-            svgStyle: { "stroke-dasharray": 6 }
-          },
-          {
-            color: "white",
-            svgStyle: { "stroke-dasharray": 6 }
-          }
-        ]
-      },
-      // below are robustness tests
-      {
-      },
-      {
-        roadLines: []
-      },
-      {
-        svgStyle: { "stroke-opacity": 0.8, "stroke-width": 15 },
-        roadLines: [
-          {
-            svgStyle: { "stroke-dasharray": 6 }
-          },
-          {
-            svgStyle: { "stroke-dasharray": 6 }
-          }
-        ]
-      },
-      {
-        name: "triple lane",
-        count: 8,
-        roadLines: [
-          {
-            color: "white"
-          },
-          {
-            color: "white"
-          }
-        ]
-      },
-      {
-        roadLines: [
-          {
-          },
-          {
-          }
-        ]
-      },
-      {
-        name: "triple lane",
-        color: "#222123",
-        count: 8,
-        svgStyle: { "stroke-opacity": 0.8, "stroke-width": 15 },
-        roadLines: [
-          {
-          },
-          {
-          }
-        ]
-      },
-      {
-        color: "#222123",
-        svgStyle: { "stroke-opacity": 0.8, "stroke-width": 15 },
-        roadLines: [
-          {
-            color: "white",
-            svgStyle: { "stroke-dasharray": 6 }
-          },
-          {
-            color: "white",
-            svgStyle: { "stroke-dasharray": 6 }
-          }
-        ]
-      },
+      }
     ];
   </script>
 </html>
