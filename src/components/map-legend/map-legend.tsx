@@ -1,6 +1,8 @@
-import { Component, Prop, h } from "@stencil/core";
+import { Component, Prop, h, Watch } from "@stencil/core";
 import { generateLegendTemplate } from "../../utils/utils";
 import "@paraboly/pwc-tooltip";
+import { ILegendEntry } from './types/ILegendEntry';
+import { resolveJson } from '../../utils/resolveJson';
 
 @Component({
   tag: "pwc-map-legend",
@@ -28,42 +30,20 @@ export class PWCMapLegendComponent {
    */
   @Prop() disableTitle: boolean = false;
 
-  /**
-   * The name list of legends
-   */
-  @Prop() names: any = '["Turkey", "Greece", "Italy"]';
-
-  /**
-   * Colors of the legends
-   */
-  @Prop() colors: any = '["red", "blue", "green"]';
-
-  /**
-   * Counts of the legends
-   */
-  @Prop() counts: any = '["2", "1", "0"]';
-
-  /**
-   * Customize the svg style completely
-   */
-  @Prop() svgStyles: any;
-
   @Prop() tooltipProps: any;
 
+  private resolvedEntries: ILegendEntry[];
+  @Prop() entries: ILegendEntry[] | string;
+
+  @Watch('entries')
+  entriesWatchHandler(newValue: string | ILegendEntry[]) {
+    this.resolvedEntries = resolveJson(newValue);
+  }
+
   private renderTemplate(): any[] {
-    const colors =
-      typeof this.colors === "string" ? JSON.parse(this.colors) : this.colors;
-    const names =
-      typeof this.names === "string" ? JSON.parse(this.names) : this.names;
-    const counts =
-      typeof this.counts === "string" ? JSON.parse(this.counts) : this.counts;
-    const template = generateLegendTemplate(
-      names,
-      colors,
-      counts,
-      this.svgStyles
+    return generateLegendTemplate(
+      this.resolvedEntries
     );
-    return template;
   }
 
   private renderTitle() {
@@ -78,6 +58,10 @@ export class PWCMapLegendComponent {
       </div >
     )
     );
+  }
+
+  componentWillLoad() {
+    this.resolvedEntries = resolveJson(this.entries);
   }
 
   render() {
