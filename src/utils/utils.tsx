@@ -1,5 +1,6 @@
 import { h } from "@stencil/core";
-import { ILegendEntry, IRoadLine } from "../components/map-legend/ILegendEntry";
+import { ILegendEntry } from "../components/map-legend/types/ILegendEntry";
+import { IRoadLine } from "../components/map-legend/types/IRoadLine";
 
 export function generateLegendTemplate(entries: ILegendEntry[]): HTMLParagraphElement[] {
   const defaultStrokeWidth = 3;

@@ -1,4 +1,5 @@
-import { JSXBase } from '@stencil/core/internal';
+import { IRoadLine } from './IRoadLine';
+import { RestrictedSVGStyle } from './RestrictedSVGStyle';
 
 export interface ILegendEntry {
     name: string;
@@ -10,10 +11,3 @@ export interface ILegendEntry {
     overlayTextSvgStyle: RestrictedSVGStyle;
     roadLines: IRoadLine[];
 }
-
-export interface IRoadLine {
-    color: string;
-    svgStyle: RestrictedSVGStyle;
-}
-
-export type RestrictedSVGStyle = JSXBase.SVGAttributes["style"] & { "stroke-width": number };

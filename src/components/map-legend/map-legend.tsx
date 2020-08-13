@@ -1,7 +1,7 @@
 import { Component, Prop, h, Watch } from "@stencil/core";
 import { generateLegendTemplate } from "../../utils/utils";
 import "@paraboly/pwc-tooltip";
-import { ILegendEntry } from './ILegendEntry';
+import { ILegendEntry } from './types/ILegendEntry';
 import { resolveJson } from '../../utils/resolveJson';
 
 @Component({

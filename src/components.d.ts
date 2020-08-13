@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ILegendEntry } from "./components/map-legend/ILegendEntry";
+import { ILegendEntry } from "./components/map-legend/types/ILegendEntry";
 export namespace Components {
     interface PwcMapLegend {
         /**
