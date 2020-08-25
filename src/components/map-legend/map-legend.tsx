@@ -32,12 +32,16 @@ export class PWCMapLegendComponent {
 
   @Prop() tooltipProps: any;
 
+  private defaultEntries: ILegendEntry[] = [];
   private resolvedEntries: ILegendEntry[];
-  @Prop() entries: ILegendEntry[] | string;
-
+  @Prop() entries: ILegendEntry[] | string = this.defaultEntries;
   @Watch('entries')
   entriesWatchHandler(newValue: string | ILegendEntry[]) {
-    this.resolvedEntries = resolveJson(newValue);
+    if(newValue === null || newValue === undefined) {
+      this.resolvedEntries = this.defaultEntries;
+    } else {
+      this.resolvedEntries = resolveJson(newValue);
+    }
   }
 
   private renderTemplate(): any[] {
