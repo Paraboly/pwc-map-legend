@@ -7,7 +7,7 @@ import { resolveJson } from '../../utils/resolveJson';
 @Component({
   tag: "pwc-map-legend",
   styleUrl: "map-legend.css",
-  shadow: true
+  shadow: false
 })
 export class PWCMapLegendComponent {
   /**
